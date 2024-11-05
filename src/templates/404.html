@@ -1,0 +1,110 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="{% static "themes/bootstrap/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/awesome/css/font-awesome.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/admin/css/AdminLTE.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/admin/css/skins/_all-skins.min.css" %}"/>
+    <script type="text/javascript" src="{% static "themes/admin/js/jquery-2.1.4.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "themes/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "themes/admin/js/src.min.js" %}"></script>
+</head>
+
+<body class="hold-transition skin-red sidebar-mini">
+<div class="wrapper">
+    <!-- Container -->
+    {% if not is_popup %}
+        <!-- Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>CCI</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>CCI</b>INSIGHTS</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        {% if user.is_authenticated %}
+                            <li class="dropdown messages-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="label label-success">4</span>
+                                </a>
+                            </li>
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="label label-warning">10</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/public/upload/images/avatar.png" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">{{ user.username }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END Header -->
+        <div id="content" class="{% block coltype %}content-wrapper{% endblock %}">
+            <section class="content-header clearfix">
+                404 Error Page
+            </section>
+            <div class="" style="margin-top: 15px;">
+                {% block messages %}
+                    {% if messages %}
+                        <ul class="messagelist">{% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+                        {% endfor %}</ul>
+                    {% endif %}
+                {% endblock messages %}
+
+                <section class="content">
+                    <div class="error-page">
+                        <h2 class="headline text-yellow"> 404</h2>
+                        <div class="error-content">
+                            <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+                            <p>
+                                We could not find the page you were looking for.
+                                Meanwhile, you may <a href="/tools/projects">return to dashboard</a> or try using the search form.
+                            </p>
+                        </div><!-- /.error-content -->
+                    </div><!-- /.error-page -->
+                </section>
+            </div>
+        </div>
+    {% endif %}
+    {% block footer %}
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Ver</b> 1.0.0
+            </div>
+            <strong>CCI INSIGHTS</strong>.
+        </footer>
+    {% endblock %}
+</div>
+<div class="se-pre-con"></div>
+<!-- END Container -->
+</div>
+</body>
+</html>

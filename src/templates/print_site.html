@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html>
+<head>
+    <title>ĐLHY: {{ title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/bootstrap/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/awesome/css/font-awesome.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/admin/css/AdminLTE.css" %}"/>
+</head>
+<style>
+    body {
+        font-family: 'Times New Roman';
+    }
+</style>
+
+<body>
+<!-- Container -->
+<div class="wrapper">
+    <section class="invoice">
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+        <div class="btn btn-sm btn-primary btn-flat no-print" onclick="window.print();"><i class="fa fa-print"></i> Print</div>
+    </section>
+</div>
+</body>
+</html>

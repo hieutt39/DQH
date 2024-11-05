@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <title>ĐLHY: {{ title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/bootstrap/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/awesome/css/font-awesome.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/plugins/bootstrap-select/css/bootstrap-select.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "themes/admin/css/AdminLTE.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "themes/admin/css/skins/_all-skins.min.css" %}{% endblock %}"/>
+    <script type="text/javascript" src="{% static "themes/admin/js/jquery-2.1.4.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "themes/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "themes/admin/js/src.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "themes/admin/js/pc_app.js" %}"></script>
+
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}{% endblock %}
+    {% block blockbots %}
+        <meta name="robots" content="NONE,NOARCHIVE"/>
+    {% endblock %}
+</head>
+
+<body class="layout-top-nav skin-yellow">
+<!-- Container -->
+<div class="wrapper">
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="{% url 'home' %}">
+                            <span>Tra cứu</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <!-- Content -->
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+        <!-- END Content -->
+    </div>
+</div>
+<!-- END Container -->
+<div class="modal" id="modal_lg" data-backdrop="static" role="dialog"></div>
+</body>
+</html>

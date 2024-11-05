@@ -1,0 +1,34 @@
+<ul class="sidebar-menu tree" data-widget="tree">
+    <li>
+        <a href="{% url 'admin:index' %}" target="_blank">
+            <i class="fa fa-home"></i> <span>Admin</span>
+        </a>
+    </li>
+    <li class="treeview">
+        <a href="{% url 'tools_index' %}">
+            <i class="fa fa-cogs"></i> <span>Tools</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href="{% url 'tools_batch' %}" class="nav-link">
+                    <i class="fa fa-cog"></i> <span>Batchs</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'tools_api' %}" class="nav-link">
+                    <i class="fa fa-ticket"></i> <span>APIs</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'tools_compare' %}" class="nav-link">
+                    <i class="fa fa-ticket"></i> <span>Compare Database</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="treeview">
+    </li>
+</ul>

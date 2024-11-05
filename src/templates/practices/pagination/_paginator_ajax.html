@@ -1,0 +1,32 @@
+{% load i18n %}
+<div class="dataTables_paginate paging_simple_numbers">
+    <ul class="pagination pagination-sm no-margin pull-right">
+        <li{% if not pagination.prev_page %} class="paginate_button disabled"{% endif %}>
+            <a {% if pagination.prev_page %}href="?{% url_replace page=pagination.prev_page %}"{% endif %}>
+                {% trans 'Prev' %}
+            </a>
+        </li>
+        {% for page in pagination.pages %}
+            <li class="paginate_button {% if page == pagination.current_page %}active{% endif %}">
+                <a {% if page != pagination.current_page %}href="?{% url_replace page=page %}"{% endif %}>
+                    {{ page }}
+                </a>
+            </li>
+        {% endfor %}
+        <li {% if not pagination.next_page %}class="paginate_button disabled"{% endif %}>
+            <a {% if pagination.next_page %}href="?{% url_replace page=pagination.next_page %}"{% endif %}>
+                {% trans 'Next' %}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function() {
+        const container = "#widget_{{ container_id }}";
+        $(container + ' .paginate_button a').on('click', function (e) {
+          console.log($(this).attr('href'))
+          return true;
+        });
+    });
+</script>

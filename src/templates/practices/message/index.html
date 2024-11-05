@@ -1,0 +1,11 @@
+{% block messages %}
+    {% if messages %}
+        <ul class="messages no-padding">
+            {% for message in messages %}
+                <li class="alert alert-dismissable {% if message.tags %} alert-{{ message.tags }}{% endif %}">
+                    {{ message|safe|capfirst }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock messages %}

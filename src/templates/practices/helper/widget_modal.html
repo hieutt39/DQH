@@ -1,0 +1,89 @@
+<div class="modal fade" id="{{ model_id }}" tabindex="-1" role="dialog" aria-labelledby="Config" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="model-label">{{ model_title }}</h4>
+                <!-- start: loading bar -->
+                <div class="modal-loading-bar">
+                    Loading...
+                </div>
+                <!--/ end: loading bar -->
+
+            </div>
+            <form id="admin_form" autocomplete="false" data-toggle="validator" role="form" name="widget_form_config"
+                  method="post" action="{% url 'api_widget_post' 0 %}" redirect="">
+                {% csrf_token %}
+                <div class="modal-body ">
+                    <div class="loading-placeholder hide">
+                        Loading...
+                    </div>
+                    <div class="modal-body-content">
+                        <div class="row form-group">
+                            <div class="col-xs-6">
+                                <label class="control-label" for="widget_name">Name</label>
+                                <input type="text" id="widget_name" name="widget_name" class="form-control" required
+                                       autocomplete="false">
+                                <div class="has-error"></div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label class="control-label" for="widget_type">Type</label>
+                                <input type="text" id="widget_type" name="widget_type" class="form-control" required
+                                       autocomplete="false">
+                                <div class="has-error"></div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-xs-6">
+                                <label class="control-label" for="widget_width">Width</label>
+                                <select id="widget_width" name="widget_width" class="form-control">
+                                    <option value="100%">100%</option>
+                                    <option value="75%">75%</option>
+                                    <option value="50%">50%</option>
+                                    <option value="25%">25%</option>
+                                </select>
+                                <div class="has-error"></div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label class="control-label" for="widget_height">Height</label>
+                                <select id="widget_height" name="widget_height" class="form-control">
+                                    <option value="100%">100%</option>
+                                    <option value="215px">215px</option>
+                                    <option value="330px">330px</option>
+                                    <option value="445px">445px</option>
+                                    <option value="650px">650px</option>
+                                    <option value="950px">950px</option>
+                                </select>
+                                <div class="has-error"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-form-buttons">
+                        <button type="button" class="btn btn-default btn-cancel btn-copy" data-dismiss="modal">
+                            <i class="fa fa-remove "></i> Cancel
+                        </button>
+                        <button type="submit" id="submit" class="btn btn-default btn-save btn-copy" onclick="ajax_submit_form(event, this);">
+                            <i class="fa fa-save "></i> Save
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        /*$('#admin_form').validator().on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+
+            } else {
+                ajax_post_upload(e, '#submit');
+            }
+        });*/
+    });
+</script>

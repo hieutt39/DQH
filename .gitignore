@@ -1,0 +1,7 @@
+/db/
+/assets/
+/config/config.ini
+__pycache__/
+*.idea
+*.idea/
+.DS_Store
