@@ -105,9 +105,9 @@ def knpcmt_pdf(request, id, template_name='web/knpcmt_pdf.html'):
     elif int(id) == 6:
         file_name = '7.6. Hotline tư vấn.pdf'
     elif int(id) == 7:
-        file_name = 'Vai trò của giáo viên trong phòng tránh ma túy học đường.pdf'
+        file_name = 'Vai Trò Của Giáo Viên Trong Phòng Tránh ma túy học đường.pdf'
     elif int(id) == 8:
-        file_name = 'Vai trò của phụ huynh trong phòng tránh ma túy học đường.pdf'
+        file_name = 'Vai Trò Của Phụ Huynh Trong Phòng Tránh ma túy học đường.pdf'
 
     return TemplateResponse(request, template_name, {
         'file_name': file_name
