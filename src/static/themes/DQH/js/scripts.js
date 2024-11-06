@@ -113,7 +113,7 @@ let sendMsg = async function (e, self) {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer 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`
+          "Authorization": `Bearer `
       },
       body: JSON.stringify({
           model: "gpt-4o-mini",
