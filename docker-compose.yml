@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   nginx:
-    container_name: tool-nginx
+    container_name: nginx
     image: nginx:stable
     tty: true
     restart: always
@@ -17,14 +17,14 @@ services:
       retries: 3
       start_period: 30s
     depends_on:
-      - web-app
+      - web
     networks:
-      - rrk-network
-  tool-web:
-    container_name: pos-reservation-api
-    image: tool-web:latest
+      - dqh-network
+  web:
+    container_name: dqh
+    image: dqh:latest
     build: ./
-    command: python src/manage.py runserver 0.0.0.0
+    command: python manage.py runserver 0.0.0.0
     restart: always
     volumes:
       - ./:/usr/src/app/
@@ -39,54 +39,8 @@ services:
       - SECRET_KEY=dbaa1_i7%*3r9-=z-+_mz4r-!qeed@(-a_r(g@k8jo8y3r27%m
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
     networks:
-      - rrk-network
-  pos-reservation-api:
-    container_name: pos-reservation-api
-    image: pos-reservation-api:latest
-    build: ./
-    restart: always
-    volumes:
-      - .:/var/www/html/
-    healthcheck:
-      test: wget --quiet --tries=1 --spider http://localhost || exit 1z
-      interval: 30s
-      timeout: 30s
-      retries: 3
-      start_period: 30s
-    # command: "/code/entrypoint.sh"
-    environment:
-      DEBUG: false
-      SECURITY_SALT: "$2a$09$SZyivX.qpmUimR/fqvdh.OyTaD7kI/bksyv8DtJdLvDX5Mu4cCui6"
-      # database: DWB_DATABASE_INFO
-      DWB_DATABASE_INFO_HOST: "phpmyadmin_db"
-      DWB_DATABASE_INFO_DB: "twb_service"
-      DWB_DATABASE_INFO_USERNAME: "root"
-      DWB_DATABASE_INFO_PASSWORD: "root"
-
-      # database: DWB_DATABASE_RO_INFO
-      DWB_DATABASE_RO_INFO_HOST: "phpmyadmin_db"
-      DWB_DATABASE_RO_INFO_DB: "twb_service"
-      DWB_DATABASE_RO_INFO_USERNAME: "root"
-      DWB_DATABASE_RO_INFO_PASSWORD: "root"
-
-      # database: DWB_DATABASE_INFO
-      POS_DATABASE_INFO_HOST: "phpmyadmin_db"
-      POS_DATABASE_INFO_DB: "twb_service"
-      POS_DATABASE_INFO_USERNAME: "root"
-      POS_DATABASE_INFO_PASSWORD: "root"
-
-      # email
-      EMAIL_TRANSPORT_HOST: localhost
-      EMAIL_TRANSPORT_PORT: 25
-      EMAIL_TRANSPORT_TIMEOUT: 30
-      EMAIL_TRANSPORT_CLIENT: null
-      EMAIL_TRANSPORT_TLS: false
-      EMAIL_TRANSPORT_DEFAULT_URL: null
-      EMAIL_FROM: "you@localhost"
-    networks:
-      - rrk-network
-
+      - dqh-network
 networks:
-  rrk-network:
-    name: rrk-network
+  dqh-network:
+    name: dqh-network
     driver: bridge

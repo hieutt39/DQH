@@ -45,7 +45,6 @@ urlpatterns = [
                   path('', include('src.modules.tools.urls')),
                   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   path('api/', include(router.urls)),
-                  path('test/', include('src.modules.test.urls')),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

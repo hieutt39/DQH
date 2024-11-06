@@ -13,9 +13,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.webp' %}"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'themes/DQH/css/styles.css' %}" rel="stylesheet"/>
     {#    {% block style %}{% endblock %}#}
@@ -25,11 +22,10 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="/">
-{#            <img src="{% static 'images/logo.webp' %}" alt="..."/>#}DQH
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'themes/DQH/assets/logo.jpg' %}" style="height: 50px; margin: -10px 0 -10px 0;"/>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars ms-1"></i>
         </button>
@@ -42,6 +38,39 @@
 {% block content %}
     {{ content }}
 {% endblock %}
+<!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-left">
+            <h3 class="section-subheading text-uppercase text-white mb-3">Liên Hệ</h3>
+            <h2 class="section-heading text-uppercase">Hotline Tư Vấn</h2>
+            <h3 class="section-subheading text-white">Chúng tôi luôn sẵn sàng hỗ trợ bạn. Hãy liên hệ với chúng tôi ngay hôm nay!</h3>
+        </div>
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-4 col-lg-4 text-white pe-5">
+                <h3><i class="far fa-envelope text-primary"></i> Email Chúng Tôi</h3>
+                <p>
+                    Gửi câu hỏi hoặc yêu cầu của bạn qua email. Chúng tôi sẽ phản hồi nhanh chóng.
+                    <a href="C3duongquangham.hungyen@moet.edu.vn" target="_blank">Gửi Email</a>
+                </p>
+            </div>
+            <div class="col-xl-4 col-lg-4 text-white">
+                <h3><i class="fas fa-phone-alt text-primary"></i> Gọi Ngay</h3>
+                <p>
+                    Cần hỗ trợ ngay lập tức? Hãy gọi cho chúng tôi để nhận được sự giúp đỡ.
+                    <a href="tel:+02213726052" target="_blank">Gọi ngay</a>
+                </p>
+            </div>
+            <div class="col-xl-4 col-lg-4 text-white ps-5">
+                <h3><i class="fas fa-map-marker-alt text-primary"></i> Tìm Đường</h3>
+                <p>
+                    Bạn có thể đến văn phòng của chúng tôi để được tư vấn trực tiếp.
+                    <a target="_blank" href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+THPT+D%C6%B0%C6%A1ng+Qu%E1%BA%A3ng+H%C3%A0m,+Li%C3%AAn+Ngh%C4%A9a,+V%C4%83n+Giang,+H%C6%B0ng+Y%C3%AAn,+Vi%E1%BB%87t+Nam/@20.9224703,105.9273863,17z/data=!3m1!4b1!4m6!3m5!1s0x3135afcf1bea62b1:0x809cddcd92cbc352!8m2!3d20.9223592!4d105.9323519!16s%2Fg%2F11bvtc6dvg?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D">Xem bản đồ</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Footer-->
 <footer class="footer py-4">
     <div class="container">
