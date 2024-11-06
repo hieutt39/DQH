@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block content %}
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Tác Hại Của Ma Túy</h2>
+                <h3 class="section-subheading text-muted">Những Hệ Lụy Khôn Lường</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/1.jpg' %}"
+                                                     alt="..."/></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng sinh lí 1</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0">
+                            <source src="{% static 'themes/DQH/assets/video/video_1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/2.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng sinh lí 2</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0">
+                            <source src="{% static 'themes/DQH/assets/video/video_1.mp4' %}"/>
+                        </video>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/3.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng tâm lí 1</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0">
+                            <source src="{% static 'themes/DQH/assets/video/video_1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/4.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng tâm lí 2 </h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0">
+                            <source src="{% static 'themes/DQH/assets/video/video_1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/4.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng tâm lí 2 </h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0">
+                            <source src="{% static 'themes/DQH/assets/video/video_1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

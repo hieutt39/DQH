@@ -61,11 +61,11 @@ def kptgmt_pdf(request, id, template_name='web/kptgmt_pdf.html'):
     })
 
 
-def ndccmt_video(request, template_name='web/kptgmt_pdf.html'):
+def ndccmt_video(request, template_name='web/ndcmt_video.html'):
     return TemplateResponse(request, template_name, {})
 
 
-def thcmt_video(request, template_name='web/kptgmt_pdf.html'):
+def thcmt_video(request, template_name='web/thcmt_video.html'):
     return TemplateResponse(request, template_name, {})
 
 
