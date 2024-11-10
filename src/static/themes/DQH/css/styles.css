@@ -250,7 +250,7 @@ sup {
 }
 
 a {
-    color: var(--bs-link-color);
+    color: var(--bs-code-color);
     text-decoration: underline;
 }
 
