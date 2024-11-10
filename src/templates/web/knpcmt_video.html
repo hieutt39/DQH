@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block content %}
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Kỹ Năng Phòng Chống Ma Tuý</h2>
+                <h3 class="section-subheading text-muted">Làm chủ nghệ thuật nói không với ma tuý</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/1.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng sinh lí 1</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0" poster="{% static 'themes/DQH/assets/images/tachai/1.jpg' %}" preload="none">
+                            <source src="{% static 'themes/DQH/assets/video/tachai/mo phong sinh li 1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/2.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng sinh lí 2</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0" poster="{% static 'themes/DQH/assets/images/tachai/2.jpg' %}" preload="none">
+                            <source src="{% static 'themes/DQH/assets/video/tachai/mo phong sinh li 2.mp4' %}"/>
+                        </video>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/3.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng tâm lí 1</h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0" poster="{% static 'themes/DQH/assets/images/tachai/3.jpg' %}" preload="none">
+                            <source src="{% static 'themes/DQH/assets/video/tachai/mo phong tam li 1.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'themes/DQH/assets/img/about/4.jpg' %}" alt="..."/>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="section-heading text-uppercase">Mô phỏng tâm lí 2 </h4>
+                        </div>
+                        <video controls class="img-fluid mb-3 mb-lg-0" poster="{% static 'themes/DQH/assets/images/tachai/4.jpg' %}" preload="none">
+                            <source src="{% static 'themes/DQH/assets/video/tachai/mo phong tam li 2.mp4' %}"/>
+                        </video>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

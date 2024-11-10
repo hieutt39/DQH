@@ -92,6 +92,9 @@ def thcmt_pdf(request, id, template_name='web/thcmt_pdf.html'):
     })
 
 
+def knpcmt_video(request, template_name='web/knpcmt_video.html'):
+    return TemplateResponse(request, template_name, {})
+
 def knpcmt_pdf(request, id, template_name='web/knpcmt_pdf.html'):
     file_name = '7.1. Kỹ năng ứng phó với ma túy.pdf'
     if int(id) == 2:
