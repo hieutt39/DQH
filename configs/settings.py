@@ -23,7 +23,12 @@ SECRET_KEY = 'django-insecure-9@6jw#0a6uja7%2#ii3$(e-us(_%por3_ftr(=*x5n#1%60rjf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://*']
+CSRF_TRUSTED_ORIGINS = [
+    'http://phongchongmatuy-dqh.com',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:9000'
+]
 SESSION_COOKIE_HTTPONLY = False
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
