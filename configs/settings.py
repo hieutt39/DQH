@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,12 +23,18 @@ SECRET_KEY = 'django-insecure-9@6jw#0a6uja7%2#ii3$(e-us(_%por3_ftr(=*x5n#1%60rjf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
-    }
-}
+CSRF_TRUSTED_ORIGINS = [
+    'http://phongchongmatuy-dqh.com',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:9000'
+]
+CORS_ALLOW_HEADERS = ['*']
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer",
+#     }
+# }
 
 # Application definition
 
@@ -161,16 +164,4 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-
-
-sentry_sdk.init(
-    dsn="http://c779265922b548c6a2beb54f667df9c0@localhost:8082/3",
-    integrations=[
-        DjangoIntegration(
-            transaction_style='url',
-            middleware_spans=True,
-            signals_spans=False,
-            cache_spans=False,
-        ),
-    ],
-)
+DQH_KEY = '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'

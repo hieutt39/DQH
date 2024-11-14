@@ -5,9 +5,9 @@ from .models import ToolExecute, ToolExecuteResult, \
     ToolConnection, ToolApiCollection, \
     ToolApiCollectionResult, ToolApiCollectionResultDetail
 
-admin.site.site_header = 'RRK Admin Tools'
-admin.site.site_title = "RRK"
-admin.site.index_title = "RRK"
+admin.site.site_header = 'DQH Admin'
+admin.site.site_title = "DQH"
+admin.site.index_title = "DQH"
 
 
 @admin.register(ToolConnection)
