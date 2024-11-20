@@ -111,6 +111,10 @@ def knpcmt_pdf(request, id, template_name='web/knpcmt_pdf.html'):
         file_name = 'Vai Trò Của Giáo Viên Trong Phòng Tránh ma túy học đường.pdf'
     elif int(id) == 8:
         file_name = 'Vai Trò Của Phụ Huynh Trong Phòng Tránh ma túy học đường.pdf'
+    elif int(id) == 9:
+        file_name = '7.6. Nhận diện các nhóm hành vi vi phạm pháp luật về ma túy và cách phòng tránh.pdf'
+    elif int(id) == 10:
+        file_name = '7.9. Xét nghiệm ma túy qua mẫu nước tiểu bằng kid test fastep.pdf'
 
     return TemplateResponse(request, template_name, {
         'file_name': file_name
