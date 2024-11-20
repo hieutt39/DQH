@@ -130,3 +130,6 @@ def library_library(request, id=0, template_name='web/digital_library_pdf.html')
     return TemplateResponse(request, template_name, {
         'file_name': file_name
     })
+
+def arena(request, template_name='web/arena_index.html'):
+    return TemplateResponse(request, template_name, {})
