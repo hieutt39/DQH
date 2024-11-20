@@ -133,3 +133,6 @@ def library_library(request, id=0, template_name='web/digital_library_pdf.html')
 
 def arena(request, template_name='web/arena_index.html'):
     return TemplateResponse(request, template_name, {})
+
+def arena_policy(request, template_name='web/arena_policy.html'):
+    return TemplateResponse(request, template_name, {})
