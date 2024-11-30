@@ -298,3 +298,14 @@ class ToolApiCollectionResultDetail(models.Model):
 
     def __str__(self):
         return f'{self.tool_execute_result.tool_execute.name}: {self.api_name}'
+    
+    
+class SiteStatistics(models.Model):
+    total_visits = models.PositiveIntegerField(default=0)
+
+    @classmethod
+    def increment_visits(cls):
+        stats, created = cls.objects.get_or_create(id=1)  # Chỉ tạo một bản ghi duy nhất
+        stats.total_visits += 1
+        stats.save()
+        return stats.total_visits

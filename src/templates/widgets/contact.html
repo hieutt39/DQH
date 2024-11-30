@@ -6,27 +6,54 @@
             <h3 class="section-subheading text-white">Chúng tôi luôn sẵn sàng hỗ trợ bạn. Hãy liên hệ với chúng tôi ngay hôm nay!</h3>
         </div>
         <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-            <div class="col-xl-4 col-lg-4 text-white pe-5">
+            <div class="col-xl-3 col-lg-3 text-white pe-5">
                 <h3><i class="far fa-envelope text-primary"></i> Email Chúng Tôi</h3>
                 <p>
                     Gửi câu hỏi hoặc yêu cầu của bạn qua email. Chúng tôi sẽ phản hồi nhanh chóng.
                     <a href="C3duongquangham.hungyen@moet.edu.vn" target="_blank">Gửi Email</a>
                 </p>
             </div>
-            <div class="col-xl-4 col-lg-4 text-white">
+            <div class="col-xl-3 col-lg-3 text-white">
                 <h3><i class="fas fa-phone-alt text-primary"></i> Gọi Ngay</h3>
                 <p>
                     Cần hỗ trợ ngay lập tức? Hãy gọi cho chúng tôi để nhận được sự giúp đỡ.
                     <a href="tel:+02213726052" target="_blank">Gọi ngay</a>
                 </p>
             </div>
-            <div class="col-xl-4 col-lg-4 text-white ps-5">
+            <div class="col-xl-3 col-lg-3 text-white ps-5">
                 <h3><i class="fas fa-map-marker-alt text-primary"></i> Tìm Đường</h3>
                 <p>
                     Bạn có thể đến văn phòng của chúng tôi để được tư vấn trực tiếp.
                     <a target="_blank" href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+THPT+D%C6%B0%C6%A1ng+Qu%E1%BA%A3ng+H%C3%A0m,+Li%C3%AAn+Ngh%C4%A9a,+V%C4%83n+Giang,+H%C6%B0ng+Y%C3%AAn,+Vi%E1%BB%87t+Nam/@20.9224703,105.9273863,17z/data=!3m1!4b1!4m6!3m5!1s0x3135afcf1bea62b1:0x809cddcd92cbc352!8m2!3d20.9223592!4d105.9323519!16s%2Fg%2F11bvtc6dvg?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D">Xem bản đồ</a>
                 </p>
             </div>
+            <div class="col-xl-3 col-lg-3 text-white ps-5">
+                <h3>Thống kê</h3>
+                <p id="stats">
+                    <strong>Số người đang online: </strong>Loading...<br>
+                    <strong>Tổng lượng truy cập: </strong>Loading...<br>
+                </p>
+            </div>
+                    
         </div>
     </div>
 </section>
+
+<script>
+    function fetchStats() {
+        fetch('api/stats/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('stats').innerHTML = `
+                    <strong>Số người đang online: </strong>${data.online_count}<br>
+                    <strong>Tổng lượng truy cập: </strong>${data.total_visits}<br>
+                `;
+            })
+            .catch(error => console.error('Error fetching stats:', error));
+    }
+
+    // Gọi hàm fetchStats mỗi 1 giây để cập nhật dữ liệu
+    fetchStats();
+    setInterval(fetchStats, 1000);
+    
+</script>

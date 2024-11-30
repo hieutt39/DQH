@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
+from . import views
 
 
 # Serializers define the API representation.
@@ -45,6 +46,7 @@ urlpatterns = [
                   path('', include('src.modules.tools.urls')),
                   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   path('api/', include(router.urls)),
+                  path('api/stats/', views.get_stats, name='get_stats'),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

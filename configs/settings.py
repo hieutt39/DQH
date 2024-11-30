@@ -38,6 +38,27 @@ CORS_ALLOW_HEADERS = ['*']
 
 # Application definition
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],  # Redis server
+        },
+    },
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'default',
+    }
+}
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Lưu session vào database
+SESSION_COOKIE_AGE = 300  # Thời gian sống của session cookie (giây)
+
+
+
 INSTALLED_APPS = [
     'daphne',
     'django.contrib.admin',
@@ -49,7 +70,8 @@ INSTALLED_APPS = [
     'prettyjson',
     'rest_framework',
     'src',
-    'src.modules.tools'
+    'src.modules.tools',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +83,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'src.utilities.middleware.middleware.CountVisitsMiddleware',
 ]
 
 ROOT_URLCONF = 'configs.urls'
