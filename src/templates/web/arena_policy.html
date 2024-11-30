@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% load i18n static %}
 {% block content %}
-    <section class="page-section" id="services">
+    <section class="page-section" id="quiz1">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    {% include "practices/left_menu_tulieu.html" %}
-                </div>
-                <div class="col-md-9" style="min-height: 800px;">
-                    <embed
+            <div class="text-center" style="padding-top: 40px">
+                <h2 class="section-heading text-uppercase">Thể lệ cuộc thi</h2>
+                <h3 class="section-subheading text-uppercase">ĐẤU TRƯỜNG</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="height: 800px;">
+                <embed
                             src="{% static 'themes/DQH/assets/pdf/'%}{{ file_name }}"
                             type="application/pdf"
                             frameBorder="0"
@@ -16,7 +18,7 @@
                             height="100%"
                             width="100%"
                     ></embed>
-                </div>
             </div>
         </div>
+    </section>
 {% endblock %}

@@ -12,4 +12,6 @@ urlpatterns = [
     re_path(r'knpcmt/video/$', web.knpcmt_video, name="web_knpcmt_video"),
     re_path(r'knpcmt/pdf/(?P<id>\w+)/$', web.knpcmt_pdf, name="web_knpcmt_pdf"),
     re_path(r'library/digital/pdf/(?P<id>\w+)/$', web.library_library, name="library_library"),
+    path('arena', web.arena, name="arena_index"),
+    re_path(r'arena/policy/(?P<id>\w+)/$', web.arena_policy, name="arena_policy"),
 ]

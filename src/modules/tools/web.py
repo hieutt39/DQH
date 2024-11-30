@@ -111,28 +111,33 @@ def knpcmt_pdf(request, id, template_name='web/knpcmt_pdf.html'):
         file_name = 'Vai Trò Của Giáo Viên Trong Phòng Tránh ma túy học đường.pdf'
     elif int(id) == 8:
         file_name = 'Vai Trò Của Phụ Huynh Trong Phòng Tránh ma túy học đường.pdf'
+    elif int(id) == 9:
+        file_name = '7.6. Nhận diện các nhóm hành vi vi phạm pháp luật về ma túy và cách phòng tránh.pdf'
+    elif int(id) == 10:
+        file_name = '7.9. Xét nghiệm ma túy qua mẫu nước tiểu bằng kid test fastep.pdf'
 
     return TemplateResponse(request, template_name, {
         'file_name': file_name
     })
 
 def library_library(request, id=0, template_name='web/digital_library_pdf.html'):
-    file_name = '7.1. Kỹ năng ứng phó với ma túy.pdf'
+    file_name = 'TL1 Hiểm họa ma túy.pdf'
     if int(id) == 2:
-        file_name = '7.2. Kỹ năng quản lý cảm xúc.pdf'
+        file_name = 'TL2 Câu nói truyền cảm hứng và áp phích tuyên truyền.pdf'
     elif int(id) == 3:
-        file_name = '7.3. Kỹ năng ứng phó với căng thẳng.pdf'
-    elif int(id) == 4:
-        file_name = '7.4. Kỹ năng tìm kiếm trợ giúp.pdf'
-    elif int(id) == 5:
-        file_name = '7.5. Một số tình huống trong thực tiễn.pdf'
-    elif int(id) == 6:
-        file_name = '7.6. Hotline tư vấn.pdf'
-    elif int(id) == 7:
-        file_name = 'Vai Trò Của Giáo Viên Trong Phòng Tránh ma túy học đường.pdf'
-    elif int(id) == 8:
-        file_name = 'Vai Trò Của Phụ Huynh Trong Phòng Tránh ma túy học đường.pdf'
+        file_name = 'TL3 Tài nguyên trực tuyến về ma túy.pdf'
 
+    return TemplateResponse(request, template_name, {
+        'file_name': file_name
+    })
+
+def arena(request, template_name='web/arena_index.html'):
+    return TemplateResponse(request, template_name, {})
+
+def arena_policy(request, id, template_name='web/arena_policy.html'):
+    file_name = 'THỂ LỆ CUỘC THI THIẾT KẾ KHẨU HIỆU.pdf'
+    if int(id) == 2:
+        file_name = 'THỂ LỆ CUỘC THI TÌM HIỂU MA TÚY TRÊN QUIZIZZ.pdf'
     return TemplateResponse(request, template_name, {
         'file_name': file_name
     })

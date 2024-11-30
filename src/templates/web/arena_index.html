@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block content %}
+    <section class="page-section" id="quiz1">
+        <div class="container">
+            <div class="text-center" style="padding-top: 40px">
+                <h2 class="section-heading text-uppercase">ĐẤU TRƯỜNG</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="padding-top: 50px;">
+                <div class="col-sm-6">
+                    <div class="portfolio-item text-center">
+                        <img class="img-fluid" src="{% static 'themes/DQH/assets/img/ct/1.jpg' %}" alt="...">
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-primary text-uppercase" href="{% url 'arena_policy' id=1 %}">Thể lệ cuộc thi</a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="portfolio-item text-center">
+                        <img class="img-fluid" src="{% static 'themes/DQH/assets/img/ct/2.jpg' %}" alt="...">
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-primary text-uppercase" href="{% url 'arena_policy'  id=2 %}">Thể lệ cuộc thi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="padding-top: 50px">
+                <div class="col-sm-6">
+                    <div class="portfolio-item text-center">
+                        <img class="img-fluid" src="{% static 'themes/DQH/assets/img/ct/kq1.jpg' %}" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="portfolio-item text-center">
+                        <img class="img-fluid" src="{% static 'themes/DQH/assets/img/ct/kq2.jpg' %}" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
