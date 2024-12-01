@@ -187,4 +187,4 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-DQH_KEY = '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'
+DQH_KEY = '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'
