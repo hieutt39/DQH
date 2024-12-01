@@ -187,4 +187,4 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-DQH_KEY = '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'
+DQH_KEY = ''
