@@ -71,7 +71,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'src',
     'src.modules.tools',
-    'channels',
+    'src.modules.tools.models',
+    # 'channels',
 ]
 
 MIDDLEWARE = [
@@ -116,7 +117,7 @@ ASGI_APPLICATION = 'configs.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'assets/db.sqlite3',
+        'NAME': 'assets/db1.sqlite3',
     },
 }
 
