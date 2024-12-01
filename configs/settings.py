@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'src',
     'src.modules.tools',
-    'src.modules.tools.models',
     # 'channels',
 ]
 
