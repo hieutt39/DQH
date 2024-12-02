@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'src',
     'src.modules.tools',
-    # 'channels',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -187,4 +187,4 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-DQH_KEY = ''
+DQH_KEY = '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'
