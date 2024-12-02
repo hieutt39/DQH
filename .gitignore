@@ -5,3 +5,6 @@ __pycache__/
 *.idea
 *.idea/
 .DS_Store
+credentials/
+.env
+

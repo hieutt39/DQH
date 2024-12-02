@@ -1,6 +1,6 @@
 """the URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The urlpatterns list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from . import views
+from configs.views import analytics_view
 
 
 # Serializers define the API representation.
@@ -46,7 +46,6 @@ urlpatterns = [
                   path('', include('src.modules.tools.urls')),
                   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   path('api/', include(router.urls)),
-                  path('api/stats/', views.get_stats, name='get_stats'),
-
+                  path('analytics/', analytics_view, name='analytics'),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
-              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
