@@ -56,19 +56,19 @@
 <!-- Footer-->
 {% include "widgets/footer.html" %}
 <!-- Chat -->
-{% comment %} {% include "widgets/chat.html" %} {% endcomment %}
+{% include "widgets/chat.html" %}
 {#{% include "practices/modal.html" %}#}
 <!-- Bootstrap core JS-->
 <script src="{% static 'themes/DQH/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'themes/DQH/js/jquery.min.js' %}"></script>
 <!-- Core theme JS-->
 <script src="{% static 'themes/DQH/js/scripts.js' %}"></script>
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="DQH_ChatBot"
-  agent-id="ee5160c4-af08-40a1-950b-a2671f1fa014"
-  language-code="vi"
-></df-messenger>
+{#<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>#}
+{#<df-messenger#}
+{#  intent="WELCOME"#}
+{#  chat-title="DQH_ChatBot"#}
+{#  agent-id="ee5160c4-af08-40a1-950b-a2671f1fa014"#}
+{#  language-code="vi"#}
+{#></df-messenger>#}
 </body>
 </html>
