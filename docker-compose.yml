@@ -40,6 +40,7 @@ services:
       - DEBUG=1
       - SECRET_KEY=dbaa1_i7%*3r9-=z-+_mz4r-!qeed@(-a_r(g@k8jo8y3r27%m
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+      - SERVICE_ACCOUNT_FILE=credentials/service-account.json
     networks:
       - dqh-network
 networks:
