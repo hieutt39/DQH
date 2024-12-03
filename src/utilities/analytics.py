@@ -4,7 +4,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # Đường dẫn tới file JSON chứa thông tin xác thực 
-SERVICE_ACCOUNT_FILE = os.getenv('SERVICE_ACCOUNT_FILE')
+SERVICE_ACCOUNT_FILE = os.getenv('SERVICE_ACCOUNT_FILE', 'credentials/service-account.json')
 
 # Kiểm tra SERVICE_ACCOUNT_FILE
 if not SERVICE_ACCOUNT_FILE or not os.path.exists(SERVICE_ACCOUNT_FILE):
